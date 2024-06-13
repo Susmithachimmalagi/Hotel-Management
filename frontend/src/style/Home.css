@@ -1,0 +1,9 @@
+.image {
+  background-image: url("../images/home.jpg");
+  background-color: rgb(83, 80, 80);
+  background-blend-mode: multiply;
+  padding: 23%;
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
