@@ -1,18 +1,19 @@
 .nav {
-  position: fixed;
+  position: sticky;
+  top: 0px;
   width: 100%;
   align-items: center;
-  background: transparent;
+  background: red;
   border-bottom: 2px rgb(243, 237, 237) solid;
   z-index: 1;
   color: white;
 }
 .title {
-  display: flex;  
+  display: flex;
   text-align: center;
-  justify-content: center;  
-  align-items: center; 
-  width: 25%; 
+  justify-content: center;
+  align-items: center;
+  width: 25%;
   font-size: 1.5rem;
 }
 #logo {
@@ -21,17 +22,16 @@
 }
 .nav-bar {
   padding: 0.5rem;
-  display: flex; 
+  display: flex;
   width: 50%;
   padding-left: 8%;
   justify-content: space-around;
 }
-.search{ 
+.search {
   width: 25%;
   font-size: 1.8rem;
- padding-left: 10%;
-
+  padding-left: 10%;
 }
-#se{
+#se {
   padding: 2rem;
 }

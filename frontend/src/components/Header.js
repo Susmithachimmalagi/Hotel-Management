@@ -29,7 +29,9 @@ function Header() {
           <Link class="/SignUp">
             <i class="bi bi-search" id="se"></i>
           </Link>
-          <i class="bi bi-person-rolodex"></i>
+          <Link to="/Login">
+            <i class="bi bi-person-rolodex"></i>
+          </Link>
         </div>
       </div>
     </>

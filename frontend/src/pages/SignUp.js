@@ -1,74 +1,103 @@
-import React from "react";
+import React, { useState } from "react";
 import "../style/SignUp.css";
-
+import {
+  Avatar,
+  Button,
+  Grid,
+  Paper,
+  TextField,
+  Typography,
+} from "@mui/material";
 function SignUp() {
+  const [FirstName, setFirstName] = useState();
+  const [LastName, setLastName] = useState();
+  const [Email, setEmail] = useState();
+  const [Phone, setPhone] = useState();
+  const [Password, setPassword] = useState();
+  const [ConfirmPwd, setConfirmPassword] = useState();
   return (
     <div>
-      <form class="signup">
-        <div class="Name">
-          <label for="name" id="label">
-            Name
-          </label>
-          <input
-            type="text"
-            id="name input"
-            //   onChange={(e) => {
-            //     setName(e.target.value);
-            //   }}
-          />
-        </div>
-        <div class="Email">
-          <label for="email" id="label">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email input"
-            //   onChange={(e) => {
-            //     setEmail(e.target.value);
-            //   }}
-          />
-        </div>
-        <div class="Pass">
-          <label for="password" id="label">
-            Password
-          </label>
-          <input
-            type="password"
-            id="password input"
-            //   onChange={(e) => {
-            //     setPassword(e.target.value);
-            //   }}
-          />
-        </div>
-        <div class="PassW">
-          <label for="password" id="label">
-            Confirm
-          </label>
-          <input
-            type="password confirm"
-            id="password input"
-            //   onChange={(e) => {
-            //     setPassword(e.target.value);
-            //   }}
-          />
-        </div>
-        <div class="Contact">
-          <label for="contact" id="label">
-            Contact
-          </label>
-          <input
-            type="text"
-            id="contact input"
-            //   onChange={(e) => {
-            //     setContact(e.target.value);
-            //   }}
-          />
-        </div>
-        <button type="submit" id="input">
-          Sign Up
-        </button>
-      </form>
+      <Grid>
+        <Paper elevation={20} id="paper">
+          <Grid align="center">
+            <Avatar id="avatar"></Avatar>
+            <h2>Sign Up</h2>
+            <Typography variant="caption" id="caption">
+              Create your account
+            </Typography>
+          </Grid>
+          <form>
+            <TextField
+              fullWidth
+              label="First Name"
+              id="textfield"
+              placeholder="Enter your first name"
+              margin="normal"
+              onChange={(e) => {
+                setFirstName(e.target.value);
+              }}
+              required
+            />
+            <TextField
+              fullWidth
+              label="Last Name"
+              id="textfield"
+              placeholder="Enter your last name"
+              margin="normal"
+              onChange={(e) => {
+                setLastName(e.target.value);
+              }}
+              required
+            />
+            <TextField
+              fullWidth
+              label="Email"
+              id="textfield"
+              margin="normal"
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+            />
+            <TextField
+              fullWidth
+              label="Phone Number"
+              id="textfield"
+              margin="normal"
+              onChange={(e) => {
+                setPhone(e.target.value);
+              }}
+              required
+            />
+            <TextField
+              fullWidth
+              label="Password"
+              id="textfield"
+              margin="normal"
+              type="password"
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+              required
+            />
+            <TextField
+              fullWidth
+              label="Confirm Password"
+              id="textfield"
+              margin="normal"
+              type="password"
+              onChange={(e) => {
+                setConfirmPassword(e.target.value);
+              }}
+              required
+            />
+            <div id="signbutton">
+              <Button type="submit" variant="contained" color="primary">
+                Sign Up
+              </Button>
+            </div>
+          </form>
+        </Paper>
+      </Grid>
     </div>
   );
 }
