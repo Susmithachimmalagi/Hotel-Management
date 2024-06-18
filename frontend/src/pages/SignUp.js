@@ -15,6 +15,7 @@ function SignUp() {
   const [Phone, setPhone] = useState();
   const [Password, setPassword] = useState();
   const [ConfirmPwd, setConfirmPassword] = useState();
+  const [user, setUser] = useState("user");
   return (
     <div>
       <Grid>
@@ -90,6 +91,18 @@ function SignUp() {
               }}
               required
             />
+            <label for="users">Choose a role:</label>
+            <select
+              name="users"
+              id="users"
+              value={user}
+              onChange={(e) => {
+                setUser(e.target.value);
+              }}
+            >
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </select>
             <div id="signbutton">
               <Button type="submit" variant="contained" color="primary">
                 Sign Up

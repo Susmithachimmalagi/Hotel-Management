@@ -10,12 +10,16 @@ import {
   Typography,
 } from "@mui/material";
 function Login() {
-  const [FirstName, setFirstName] = useState();
-  const [LastName, setLastName] = useState();
   const [Email, setEmail] = useState();
-  const [Phone, setPhone] = useState();
   const [Password, setPassword] = useState();
-  const [ConfirmPwd, setConfirmPassword] = useState();
+  const [user, setUser] = useState("user");
+
+  let onlogin = (event) => {
+    console.log(Email);
+    console.log(Password);
+    console.log(user);
+    event.preventDefault();
+  };
   return (
     <div>
       <Grid>
@@ -23,9 +27,6 @@ function Login() {
           <Grid align="center">
             <Avatar id="avatar"></Avatar>
             <h2>Login</h2>
-            <Typography variant="caption" id="caption">
-              Create your account
-            </Typography>
           </Grid>
           <form>
             <TextField
@@ -48,14 +49,32 @@ function Login() {
               }}
               required
             />
+            <label for="users">Choose a role:</label>
+            <select
+              name="users"
+              id="users"
+              value={user}
+              onChange={(e) => {
+                setUser(e.target.value);
+              }}
+            >
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </select>
             <div id="button">
-              <Button type="submit" variant="contained" color="primary">
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                onClick={onlogin}
+              >
                 Login
               </Button>
             </div>
           </form>
           Don't have an account?
-          <Link to="/signup"> Sign up</Link>
+          <Link to="/signup"> Sign up</Link> <br />
+          Forgot password?
         </Paper>
       </Grid>
     </div>

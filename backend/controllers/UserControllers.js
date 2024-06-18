@@ -32,4 +32,31 @@ const getUsers = async (req, res) => {
     });
   }
 };
-module.exports = { createUser, getUsers };
+
+const loginUser = async (req, res) => {
+  const { email, password, role } = req.body;
+  const user = await User.findOne({ email: email });
+  try {
+    if (user && email === user.email) {
+      res.send({
+        status: 200,
+        message: "user  found",
+        users: user,
+      });
+    } else {
+      res.send({
+        status: 404,
+        message: "user not found",
+        users: user,
+      });
+    }
+  } catch (error) {
+    res.send({
+      status: 500,
+      message: "server error",
+      error: error,
+    });
+    console.log(error);
+  }
+};
+module.exports = { createUser, getUsers, loginUser };

@@ -4,6 +4,7 @@ const mongoose = require("mongoose"); // import mongoose driver
 
 const app = express(); //instantiating express
 const userRoutes = require("./routes/userRoutes");
+
 const connect = async () => {
   try {
     await mongoose.connect("mongodb://127.0.0.1:27017/ASSPHotelMgmt");
@@ -21,6 +22,7 @@ app.use(express.json());
 app.use(cors());
 // console.log(userRoutes);
 app.use("/users", userRoutes);
+
 app.listen(4000, () => {
   connect();
   console.log("server started on port 4000");
