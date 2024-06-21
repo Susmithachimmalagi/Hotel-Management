@@ -19,14 +19,16 @@ function Header() {
             <div>Home</div>
           </Link>
           <div>About</div>
-          <div>Packages</div>
+          <Link to="/Packages">
+            <div>Packages</div>
+          </Link>
           <div>Book</div>
           <div>Services</div>
           <div>Reviews</div>
           <div>Contact</div>
         </div>
         <div class="search">
-          <Link class="/SignUp">
+          <Link to="/SignUp">
             <i class="bi bi-search" id="se"></i>
           </Link>
           <Link to="/Login">
