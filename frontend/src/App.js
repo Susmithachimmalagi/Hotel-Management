@@ -5,12 +5,11 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
-import Packages from "./pages/Packages";
 
 function App() {
   return (
     <div>
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Header />
         <Routes>
           <Route path="/" element={<Home />}></Route>
@@ -18,7 +17,9 @@ function App() {
           <Route path="/signUp" element={<SignUp />}></Route>
           <Route path="/Packages" element={<Packages />}></Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+
+      <Book />
     </div>
   );
 }
