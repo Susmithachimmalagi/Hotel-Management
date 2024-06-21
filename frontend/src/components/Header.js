@@ -23,7 +23,10 @@ function Header() {
             <div>Packages</div>
           </Link>
           <div>Book</div>
-          <div>Services</div>
+          <Link to="/Services">
+            <div>Services</div>
+          </Link>
+
           <div>Reviews</div>
           <div>Contact</div>
         </div>
