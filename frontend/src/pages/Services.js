@@ -3,7 +3,6 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "bootstrap-icons/font/bootstrap-icons.css";
-// import { Link } from "react-router-dom";
 import home from "../images/home.jpg";
 import ClubLounge1 from "../images/ClubLounge1.webp";
 import See from "../images/See.jpg";

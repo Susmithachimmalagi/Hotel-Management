@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Services from "./pages/Services";
+import Packages from "./pages/Packages";
 
 function App() {
   return (
@@ -16,10 +17,10 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/Login" element={<Login />}></Route>
           <Route path="/signUp" element={<SignUp />}></Route>
+          <Route path="/Packages" element={<Packages />}></Route>
           <Route path="/Services" element={<Services />}></Route>
         </Routes>
       </BrowserRouter>
-      {/* <Services /> */}
     </div>
   );
 }
