@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../style/SignUp.css";
+import axios from "axios";
 import {
   Avatar,
   Button,
@@ -14,8 +15,34 @@ function SignUp() {
   const [Email, setEmail] = useState();
   const [Phone, setPhone] = useState();
   const [Password, setPassword] = useState();
-  const [ConfirmPwd, setConfirmPassword] = useState();
-  const [user, setUser] = useState("user");
+  const [confirmPassword, setConfirmPassword] = useState();
+  const [role, setRole] = useState("user");
+
+  const handleSubmit = (event) => {
+    let userObj = {
+      FirstName,
+      LastName,
+      Email,
+      Phone,
+      Password,
+      confirmPassword,
+      role,
+    };
+    axios
+      .post("http://localhost:4000/users/createuser", userObj)
+      .then((res) => {
+        if (res.status === 200) {
+          alert(res.data.message);
+        } else {
+          Promise.reject();
+        }
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    event.preventDefault();
+  };
   return (
     <div>
       <Grid>
@@ -95,16 +122,21 @@ function SignUp() {
             <select
               name="users"
               id="users"
-              value={user}
+              value={role}
               onChange={(e) => {
-                setUser(e.target.value);
+                setRole(e.target.value);
               }}
             >
               <option value="user">User</option>
               <option value="admin">Admin</option>
             </select>
             <div id="signbutton">
-              <Button type="submit" variant="contained" color="primary">
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                onClick={handleSubmit}
+              >
                 Sign Up
               </Button>
             </div>
