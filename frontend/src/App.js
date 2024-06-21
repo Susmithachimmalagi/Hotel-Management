@@ -10,15 +10,15 @@ import Packages from "./pages/Packages";
 function App() {
   return (
     <div>
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Header />
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/Login" element={<Login />}></Route>
           <Route path="/signUp" element={<SignUp />}></Route>
+          <Route path="/Packages" element={<Packages />}></Route>
         </Routes>
-      </BrowserRouter> */}
-      <Packages />
+      </BrowserRouter>
     </div>
   );
 }
