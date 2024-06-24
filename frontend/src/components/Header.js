@@ -18,11 +18,15 @@ function Header() {
           <Link class="" to="/">
             <div>Home</div>
           </Link>
-          <div>About</div>
+          <Link to="/About">
+            <div>About</div>
+          </Link>
           <Link to="/Packages">
             <div>Packages</div>
           </Link>
-          <div>Book</div>
+          <Link to="/Book">
+            <div>Book</div>
+          </Link>
           <Link to="/Services">
             <div>Services</div>
           </Link>
@@ -31,7 +35,7 @@ function Header() {
           <div>Contact</div>
         </div>
         <div class="search">
-          <Link to="/SignUp">
+          <Link to="/Search">
             <i class="bi bi-search" id="se"></i>
           </Link>
           <Link to="/Login">

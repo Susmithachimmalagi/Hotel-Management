@@ -32,9 +32,12 @@ const getUsers = async (req, res) => {
     });
   }
 };
-
+let admin = false;
 const loginUser = async (req, res) => {
   const { email, password, role } = req.body;
+  if (role === "admin") {
+    admin = true;
+  }
   const user = await User.findOne({ email: email });
   try {
     if (user && email === user.email) {
@@ -59,4 +62,6 @@ const loginUser = async (req, res) => {
     console.log(error);
   }
 };
+
+
 module.exports = { createUser, getUsers, loginUser };

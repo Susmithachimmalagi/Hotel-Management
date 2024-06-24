@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../style/Book.css";
-import book from "../images/booking.jpg";
+import book from "../images/book1.jpg";
 import {
   Avatar,
   Button,
@@ -10,11 +10,19 @@ import {
   Typography,
 } from "@mui/material";
 function Book() {
-  const [WhereTo, setWhereTo] = useState();
-  const [Guestsrooms, setGuestsrooms] = useState();
-  const [CheckIn, setCheckIn] = useState();
-  const [CheckOut, setCheckOut] = useState();
-  const [user, setUser] = useState("user");
+  const [Name, setWhereTo] = useState();
+  const [Rooms, setGuestsrooms] = useState();
+  const [In, setCheckIn] = useState();
+  const [Out, setCheckOut] = useState();
+  // const [user, setUser] = useState("user");
+  const handleSubmit = (event) => {
+    let userObj = {
+      Name,
+      Rooms,
+      In,
+      Out,
+    };
+  };
   return (
     <div id="fullbook">
       <div id="Firstbook">
@@ -24,9 +32,10 @@ function Book() {
         <Grid>
           <Paper elevation={20} id="paper">
             <form>
+              <h5>Hotel Name</h5>
               <TextField
                 fullWidth
-                label="WhereTo"
+                label="Name"
                 id="textfield"
                 placeholder="PlaceName"
                 margin="normal"
@@ -35,10 +44,11 @@ function Book() {
                 }}
                 required
               />
+              <h5>AC & Non-AC</h5>
               {
                 <TextField
                   fullWidth
-                  label="Guestsrooms"
+                  label="Rooms"
                   id="textfield"
                   placeholder=" 2 adults,1 child,0 aged"
                   margin="normal"
@@ -48,9 +58,10 @@ function Book() {
                   required
                 />
               }
+              <h5>Check-In</h5>
               <TextField
                 fullWidth
-                label="dd-mm-yy"
+                label="In"
                 id="textfield"
                 placeholder="07-10-2002"
                 margin="normal"
@@ -58,9 +69,10 @@ function Book() {
                   setCheckIn(e.target.value);
                 }}
               />
+              <h5> Check-Out</h5>
               <TextField
                 fullWidth
-                label="dd-mm-yy"
+                label="Out"
                 id="textfield"
                 placeholder="07-10-2002"
                 margin="normal"
@@ -74,6 +86,7 @@ function Book() {
                 variant="contained"
                 color="primary"
                 id="BookNow"
+                onClick={handleSubmit}
               >
                 Book Now
               </Button>
@@ -83,7 +96,7 @@ function Book() {
       </div>
 
       <div id="Secondbook">
-        <img src={book} height="300px" width="350px" />
+        <img src={book} height="300px" width="350px" id="img" />
       </div>
     </div>
   );

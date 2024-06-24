@@ -28,7 +28,6 @@ function Services() {
               <h5 class="card-title">Resort</h5>
               <p class="card-text">Resorts kind of rooms are also provided.</p>
             </div>
-                
           </div>
         </Col>
         <Col>
@@ -40,7 +39,6 @@ function Services() {
                 Club suites are available with exclusive space.
               </p>
             </div>
-                
           </div>
         </Col>
         <Col>
@@ -52,7 +50,6 @@ function Services() {
                 We strive to help you by SightSeeing tours.
               </p>
             </div>
-                
           </div>
         </Col>
         <Col>
@@ -64,7 +61,6 @@ function Services() {
                 Kids club provides a sort of entertainment
               </p>
             </div>
-                
           </div>
         </Col>
       </Row>
