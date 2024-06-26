@@ -4,6 +4,7 @@ const mongoose = require("mongoose"); // import mongoose driver
 
 const app = express(); //instantiating express
 const userRoutes = require("./routes/userRoutes");
+const adminRoutes = require("./routes/adminRoutes");
 
 const connect = async () => {
   try {
@@ -22,6 +23,7 @@ app.use(express.json());
 app.use(cors());
 // console.log(userRoutes);
 app.use("/users", userRoutes);
+app.use("/admin", adminRoutes);
 
 app.listen(4000, () => {
   connect();

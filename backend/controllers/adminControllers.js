@@ -1,12 +1,12 @@
-const User = require("../models/userSchema");
+const admin = require("../models/adminSchema");
 
-const createUser = async (req, res) => {
-  const newuser = new User(req.body);
+const createadmin = async (req, res) => {
+  const newadmin = new admin(req.body);
   try {
-    await newuser.save();
+    await newadmin.save();
     res.send({
       status: 200,
-      message: "New user created",
+      message: "New admin created",
     });
   } catch (error) {
     res.send({
@@ -17,12 +17,12 @@ const createUser = async (req, res) => {
   }
 };
 
-const getUsers = async (req, res) => {
-  const users = await User.find();
+const getadmin = async (req, res) => {
+  const admin = await admin.find();
   try {
     res.send({
       status: 200,
-      users: users,
+      admin: admin,
     });
   } catch (error) {
     res.send({
@@ -33,4 +33,4 @@ const getUsers = async (req, res) => {
   }
 };
 
-module.exports = { createUser, getUsers };
+module.exports = { createadmin, getadmin };
