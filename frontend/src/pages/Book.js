@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../style/Book.css";
 import book from "../images/book1.jpg";
+import axios from "axios";
 import {
   Avatar,
   Button,
@@ -10,6 +11,16 @@ import {
   Typography,
 } from "@mui/material";
 function Book() {
+  useEffect(() => {
+    axios
+      .get("http://localhost:4000/package/getpackage")
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   const [Name, setWhereTo] = useState();
   const [Rooms, setGuestsrooms] = useState();
   const [In, setCheckIn] = useState();

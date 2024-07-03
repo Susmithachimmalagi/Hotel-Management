@@ -15,6 +15,7 @@ import pac9 from "../images/p9.jpg";
 import pac5 from "../images/p5.jpg";
 import pac6 from "../images/p6.avif";
 function Packages() {
+  
   return (
     <div>
       <div class="title">

@@ -32,5 +32,30 @@ const getUsers = async (req, res) => {
     });
   }
 };
+const deleteUser = async (req, res) => {
+  const id = req.params.id;
+  try {
+    const deletedUser = await User.findByIdAndDelete(id);
+    res.send({
+      status: 200,
+      deletedUser: deletedUser,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-module.exports = { createUser, getUsers };
+const updateUser = async (req, res) => {
+  const id = req.params.id;
+  try {
+    const updatedUser = await User.findByIdAndUpdate(id, { $set: req.body });
+    res.send({
+      status: 200,
+      updatedUser: updatedUser,
+    });
+  } catch (error) {
+    console, log(error);
+  }
+};
+
+module.exports = { createUser, getUsers, deleteUser, updateUser };

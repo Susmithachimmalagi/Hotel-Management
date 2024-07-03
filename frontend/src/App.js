@@ -10,6 +10,7 @@ import Packages from "./pages/Packages";
 import Book from "./pages/Book";
 import Search from "./pages/Search";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/Packages" element={<Packages />}></Route>
           <Route path="/Services" element={<Services />}></Route>
           <Route path="/Book" element={<Book />}></Route>
+          <Route path="/Contact" element={<Contact />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

@@ -18,11 +18,11 @@ const createadmin = async (req, res) => {
 };
 
 const getadmin = async (req, res) => {
-  const admin = await admin.find();
+  const admindata = await admin.find();
   try {
     res.send({
       status: 200,
-      admin: admin,
+      admin: admindata,
     });
   } catch (error) {
     res.send({

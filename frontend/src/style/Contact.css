@@ -1,0 +1,21 @@
+.Contactus-1 {
+  text-align: center;
+  padding-top: 2rem;
+}
+.Contact-2 {
+  display: flex;
+  width: 100%;
+}
+
+#Contactimg {
+  width: 50%;
+}
+.Contact-pg {
+  width: 50%;
+}
+#contact {
+  background-color: black;
+}
+#textfield-msg {
+  padding: 4rem;
+}

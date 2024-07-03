@@ -5,6 +5,8 @@ const mongoose = require("mongoose"); // import mongoose driver
 const app = express(); //instantiating express
 const userRoutes = require("./routes/userRoutes");
 const adminRoutes = require("./routes/adminRoutes");
+const packageRoutes = require("./routes/packageRoutes");
+const contactRoutes = require("./routes/contactRoutes");
 
 const connect = async () => {
   try {
@@ -24,6 +26,8 @@ app.use(cors());
 // console.log(userRoutes);
 app.use("/users", userRoutes);
 app.use("/admin", adminRoutes);
+app.use("/package", packageRoutes);
+app.use("/contact", contactRoutes);
 
 app.listen(4000, () => {
   connect();

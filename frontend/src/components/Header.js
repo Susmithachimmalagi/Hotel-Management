@@ -32,7 +32,9 @@ function Header() {
           </Link>
 
           <div>Reviews</div>
-          <div>Contact</div>
+          <Link to="/Contact">
+            <div>Contact</div>
+          </Link>
         </div>
         <div class="search">
           <Link to="/Search">
